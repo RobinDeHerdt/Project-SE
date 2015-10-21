@@ -15,6 +15,8 @@ namespace RPSLS___Project
         public Form1()
         {
             InitializeComponent();
+
+            // Git is SHIT
         }
     }
 }
