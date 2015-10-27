@@ -14,23 +14,31 @@ namespace RPSLS___Project
   {
     private HandController controller;
 
-    public HandView(HandController c)
+    public HandView(HandController c, bool isNpc)
     {
       InitializeComponent();
 
       controller = c;
+
+      if (isNpc)
+      {
+        lblNaam.Text = "NPC";
+        btnLizard.Enabled = false;
+        btnPaper.Enabled = false;
+        btnRock.Enabled = false;
+        btnScissors.Enabled = false;
+        btnSpock.Enabled = false;
+      }
     }
 
     private void btnRock_Click(object sender, EventArgs e)
     {
       controller.PlayerChoice(this.btnRock.Text);
-      this.lblNaam.Text = btnRock.Text;
     }
 
     private void btnPaper_Click(object sender, EventArgs e)
     {
       controller.PlayerChoice(this.btnPaper.Text);
-      this.lblNaam.Text = btnPaper.Text;
     }
 
     private void btnScissors_Click(object sender, EventArgs e)

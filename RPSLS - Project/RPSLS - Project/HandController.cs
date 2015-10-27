@@ -13,8 +13,8 @@ namespace RPSLS___Project
 
     public HandController(bool isNpc)
     {
-      model = new HandModel();
-      view = new HandView(this);
+      model = new HandModel(this);
+      view = new HandView(this, isNpc);
       model.IsNpc = isNpc;
     }
 
@@ -30,21 +30,7 @@ namespace RPSLS___Project
 
     public void PlayerChoice(string buttonText)
     {
-      switch (buttonText)
-      {
-        case "Rock":
-          break;
-        case "Scissors":
-          break;
-        case "Paper":
-          break;
-        case "Lizard":
-          break;
-        case "Spock":
-          break;
-        default:
-          break;
-      }
+      model.HandOfChoice = buttonText;
     }
   }
 }

@@ -8,19 +8,21 @@ namespace RPSLS___Project
 {
   public class HandModel
   {
-    private static Random randomNumber;
-    private int numberOfChoice;
+    private static Random randomGenerator;
+    private string handOfChoice;
     private bool isNpc;
+    private HandController controller;
+    private string[] handArray = new string[5] { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
 
-    public int NumberOfChoice
+    public string HandOfChoice
     {
       get
       {
-        return numberOfChoice;
+        return handOfChoice;
       }
       set
       {
-        numberOfChoice = value;
+        handOfChoice = value;
       }
     }
 
@@ -36,14 +38,15 @@ namespace RPSLS___Project
       }
     }
 
-    public HandModel()
+    public HandModel(HandController c)
     {
-      randomNumber = new Random();
+      randomGenerator = new Random();
+      controller = c;
     }
 
     public void ChooseRandom()
     {
-      numberOfChoice = randomNumber.Next(1,6);
+      handOfChoice = handArray[randomGenerator.Next(0,5)];
     }
   }
 }
