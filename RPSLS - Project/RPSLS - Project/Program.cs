@@ -16,7 +16,10 @@ namespace RPSLS___Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameView());
+
+            GameController game = new GameController();
+
+            Application.Run(game.GetView());
         }
     }
 }

@@ -94,6 +94,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RPSLSView.resx">
+      <DependentUpon>RPSLSView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScoreBoardView.resx">
       <DependentUpon>ScoreBoardView.cs</DependentUpon>
     </EmbeddedResource>

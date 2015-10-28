@@ -12,9 +12,27 @@ namespace RPSLS___Project
 {
   public partial class RPSLSView : UserControl
   {
-    public RPSLSView()
+    private RPSLSController controller;
+    public RPSLSView(RPSLSController c)
     {
+      controller = c;
       InitializeComponent();
+    }
+
+    private void RPSLSView_Load(object sender, EventArgs e)
+    {
+      List<HandView> hands = controller.GetViewHands();
+
+      int handWidth = hands.First().Width;
+      int handHeight = hands.First().Height;
+
+      foreach (HandView hand in hands)
+      {
+        HandView tempHand = hand;
+        int xPos = hands.IndexOf(hand) * handWidth;
+        hand.Location = new Point(xPos, 0);
+        Controls.Add(tempHand);
+      }
     }
   }
 }
