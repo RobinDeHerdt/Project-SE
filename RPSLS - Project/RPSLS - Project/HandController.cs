@@ -33,6 +33,7 @@ namespace RPSLS___Project
     public void NpcChoice()
     {
       model.ChooseRandom();
+      rpslsController.NextTurn();
     }
 
     public void PlayerChoice(string buttonText)
@@ -44,6 +45,10 @@ namespace RPSLS___Project
     public void ChooseHand()
     {
       model.HandOfChoice = "";
+      if (model.IsNpc)
+      {
+        NpcChoice();
+      }
       view.ButtonEnableDisable();
     }
   }
