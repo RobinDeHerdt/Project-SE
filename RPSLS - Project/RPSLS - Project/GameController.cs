@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS___Project
 {
-  class GameController
+  public class GameController
   {
 
   }
