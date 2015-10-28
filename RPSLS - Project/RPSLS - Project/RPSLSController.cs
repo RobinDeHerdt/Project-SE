@@ -12,10 +12,12 @@ namespace RPSLS___Project
     private HandController player, npc;
     private RPSLSModel model;
     private RPSLSView view;
+    private GameController gameController;
 
-    public RPSLSController()
+    public RPSLSController(GameController c)
     {
       int playerCount = 0;
+      playerArray = new HandController[2];
       player = new HandController(false, this);
       playerArray[playerCount] = player;
       playerCount++;
@@ -25,12 +27,25 @@ namespace RPSLS___Project
       playerCount++;
 
       model = new RPSLSModel(playerCount);
-      view = new RPSLSView();
+      view = new RPSLSView(this);
+
+      gameController = c;
     }
 
     public RPSLSView GetView()
     {
       return view;
+    }
+
+    public List<HandView> GetViewHands()
+    {
+      List<HandView> viewOfHands = new List<HandView>();
+      foreach (HandController hand in playerArray)
+      {
+        HandView handView = hand.getView();
+        viewOfHands.Add(handView);
+      }
+      return viewOfHands;
     }
 
     private void StartTurn()

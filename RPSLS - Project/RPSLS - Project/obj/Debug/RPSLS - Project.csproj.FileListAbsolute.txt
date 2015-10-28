@@ -9,3 +9,5 @@ C:\Users\Yannis\Documents\Software Engineering\Project RPSLS\Project-SE\RPSLS - 
 C:\Users\Yannis\Documents\Software Engineering\Project RPSLS\Project-SE\RPSLS - Project\RPSLS - Project\obj\Debug\RPSLS - Project.csproj.GenerateResource.Cache
 C:\Users\Yannis\Documents\Software Engineering\Project RPSLS\Project-SE\RPSLS - Project\RPSLS - Project\obj\Debug\RPSLS - Project.exe
 C:\Users\Yannis\Documents\Software Engineering\Project RPSLS\Project-SE\RPSLS - Project\RPSLS - Project\obj\Debug\RPSLS - Project.pdb
+C:\Users\Yannis\Documents\Software Engineering\Project RPSLS\Project-SE\RPSLS - Project\RPSLS - Project\obj\Debug\RPSLS___Project.RPSLSView.resources
+C:\Users\Yannis\Documents\Software Engineering\Project RPSLS\Project-SE\RPSLS - Project\RPSLS - Project\obj\Debug\RPSLS___Project.ScoreBoardView.resources
