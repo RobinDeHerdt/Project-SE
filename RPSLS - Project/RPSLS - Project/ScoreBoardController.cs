@@ -9,14 +9,15 @@ namespace RPSLS___Project
 
   public class ScoreBoardController
   {
-        private GameController container;
+        private GameController gameController;
 
         private ScoreBoardView view;
         private ScoreBoardModel model;
 
-        public ScoreBoardController( GameController controller)
+        public ScoreBoardController( GameController c)
         {
-            container = controller;
+            gameController = c;
+            view = new ScoreBoardView(this);
         }
 
         public ScoreBoardView GetView()
