@@ -16,6 +16,10 @@ namespace RPSLS___Project
       {
         return playerTurn;
       }
+      set
+      {
+        playerTurn = value;
+      }
     }
 
     public RPSLSModel(int playerCount)
