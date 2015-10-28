@@ -30,6 +30,8 @@ namespace RPSLS___Project
       view = new RPSLSView(this);
 
       gameController = c;
+
+      StartTurn();
     }
 
     public RPSLSView GetView()
@@ -60,8 +62,11 @@ namespace RPSLS___Project
         CalculateWinner();
         model.PlayerTurn = 0;
       }
-      model.PlayerTurn++;
-      StartTurn();
+      else
+      {
+        model.PlayerTurn++;
+        StartTurn();
+      }
     }
 
     private void CalculateWinner()
@@ -75,20 +80,22 @@ namespace RPSLS___Project
 
       for (int i = 0; i < handsOfChoice.Length; i++)    //  Vergelijkt alle handsOfChoice met de rest
       {
-        for (int j = i + 1; j < handsOfChoice.Length; j++)
+        for (int j = 0; j < handsOfChoice.Length; j++)
         {
-          tempPoints[i] += CalculateHands(handsOfChoice[i], handsOfChoice[j]);
+          if (j != i)
+          {
+            tempPoints[i] += CalculateHands(handsOfChoice[i], handsOfChoice[j]);
+          }
         }
       }
 
       int winningPlayerNumber = 0;
+      int highestPoints = 0;
       for (int i = 1; i <= tempPoints.Length; i++)   // i = 1 omdat Draw = 0
       {
-        int highestPoints = 0;
-
-        if (tempPoints[i] > highestPoints)
+        if (tempPoints[i - 1] > highestPoints)
         {
-          highestPoints = tempPoints[i];
+          highestPoints = tempPoints[i - 1];
           winningPlayerNumber = i;
         }
       }

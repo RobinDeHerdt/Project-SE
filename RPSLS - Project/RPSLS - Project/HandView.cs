@@ -23,16 +23,17 @@ namespace RPSLS___Project
       if (isNpc)
       {
         lblNaam.Text = "NPC";
-        btnLizard.Enabled = false;
-        btnPaper.Enabled = false;
-        btnRock.Enabled = false;
-        btnScissors.Enabled = false;
-        btnSpock.Enabled = false;
+        
       }
       else if (!isNpc)
       {
         lblNaam.Text = "Player";
       }
+      btnLizard.Enabled = false;
+      btnPaper.Enabled = false;
+      btnRock.Enabled = false;
+      btnScissors.Enabled = false;
+      btnSpock.Enabled = false;
     }
 
     private void btnRock_Click(object sender, EventArgs e)
