@@ -76,6 +76,7 @@ namespace RPSLS___Project
       for (int i = 0; i < playerArray.Length; i++)      //  Get all handsOfChoice
       {
         handsOfChoice[i] = playerArray[i].GetHand();
+        Console.WriteLine(playerArray[i].GetHand());
       }
 
       for (int i = 0; i < handsOfChoice.Length; i++)    //  Vergelijkt alle handsOfChoice met de rest
