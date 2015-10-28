@@ -10,17 +10,24 @@ namespace RPSLS___Project
   {
     private HandModel model;
     private HandView view;
+    private RPSLSController rpslsController;
 
-    public HandController(bool isNpc)
+    public HandController(bool isNpc, RPSLSController c)
     {
       model = new HandModel(this);
       view = new HandView(this, isNpc);
       model.IsNpc = isNpc;
+      rpslsController = c;
     }
 
     public HandView getView()
     {
       return view;
+    }
+
+    public string GetHand()
+    {
+      return model.HandOfChoice;
     }
 
     public void NpcChoice()
@@ -31,6 +38,13 @@ namespace RPSLS___Project
     public void PlayerChoice(string buttonText)
     {
       model.HandOfChoice = buttonText;
+      rpslsController.NextTurn();
+    }
+
+    public void ChooseHand()
+    {
+      model.HandOfChoice = "";
+      view.ButtonEnableDisable();
     }
   }
 }

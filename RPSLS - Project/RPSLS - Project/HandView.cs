@@ -29,31 +29,49 @@ namespace RPSLS___Project
         btnScissors.Enabled = false;
         btnSpock.Enabled = false;
       }
+      else if (!isNpc)
+      {
+        lblNaam.Text = "Player";
+      }
     }
 
     private void btnRock_Click(object sender, EventArgs e)
     {
+      ButtonEnableDisable();
       controller.PlayerChoice(this.btnRock.Text);
     }
 
     private void btnPaper_Click(object sender, EventArgs e)
     {
+      ButtonEnableDisable();
       controller.PlayerChoice(this.btnPaper.Text);
     }
 
     private void btnScissors_Click(object sender, EventArgs e)
     {
+      ButtonEnableDisable();
       controller.PlayerChoice(this.btnScissors.Text);
     }
 
     private void btnLizard_Click(object sender, EventArgs e)
     {
+      ButtonEnableDisable();
       controller.PlayerChoice(this.btnLizard.Text);
     }
 
     private void btnSpock_Click(object sender, EventArgs e)
     {
+      ButtonEnableDisable();
       controller.PlayerChoice(this.btnSpock.Text);
+    }
+
+    public void ButtonEnableDisable()
+    {
+      btnLizard.Enabled = !btnLizard.Enabled;
+      btnPaper.Enabled = !btnPaper.Enabled;
+      btnRock.Enabled = !btnRock.Enabled;
+      btnScissors.Enabled = !btnScissors.Enabled;
+      btnSpock.Enabled = !btnSpock.Enabled;
     }
   }
 }
