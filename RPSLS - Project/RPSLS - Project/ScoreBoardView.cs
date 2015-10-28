@@ -12,9 +12,11 @@ namespace RPSLS___Project
 {
   public partial class ScoreBoardView : UserControl
   {
-    public ScoreBoardView()
+    private ScoreBoardController controller;
+    public ScoreBoardView(ScoreBoardController c)
     {
       InitializeComponent();
+      controller = c;
     }
     
         public void updateView()

@@ -57,9 +57,9 @@ namespace RPSLS___Project
 
     public void NextTurn()
     {
-      if (model.PlayerTurn == playerArray.Length - 1)
+      if (model.PlayerTurn == playerArray.Length - 1)   // Als iedereen aan de beurt is geweest
       {
-        CalculateWinner();
+        Console.WriteLine("Player" + CalculateWinner() + " wins !");
         model.PlayerTurn = 0;
       }
       else
@@ -69,14 +69,18 @@ namespace RPSLS___Project
       }
     }
 
-    private void CalculateWinner()
+    private int CalculateWinner()
     {
       string[] handsOfChoice = new string[playerArray.Length];
       int[] tempPoints = new int[playerArray.Length];
       for (int i = 0; i < playerArray.Length; i++)      //  Get all handsOfChoice
       {
         handsOfChoice[i] = playerArray[i].GetHand();
+<<<<<<< HEAD
         Console.WriteLine(playerArray[i].GetHand());
+=======
+        Console.WriteLine("Player" + i + " chooses: " + playerArray[i].GetHand());
+>>>>>>> Yannis-Branch
       }
 
       for (int i = 0; i < handsOfChoice.Length; i++)    //  Vergelijkt alle handsOfChoice met de rest
@@ -100,6 +104,7 @@ namespace RPSLS___Project
           winningPlayerNumber = i;
         }
       }
+      return winningPlayerNumber;
     }
 
     private int CalculateHands(string s, string t)

@@ -26,6 +26,11 @@ namespace RPSLS___Project
       int handWidth = hands.First().Width;
       int handHeight = hands.First().Height;
 
+      this.Width = handWidth * hands.Count;
+      this.Height = handHeight;
+      Console.WriteLine("HandSize: " + handWidth + "," + handHeight);
+      Console.WriteLine("RPSLS Size: " + Width + "," + Height);
+
       foreach (HandView hand in hands)
       {
         HandView tempHand = hand;

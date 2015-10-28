@@ -23,10 +23,22 @@ namespace RPSLS___Project
     private void GameView_Load(object sender, EventArgs e)
     {
       RPSLSView rpslsView = controller.GetRPSLSView();
-      //ScoreBoardView scoreboardView = controller.GetScoreboardView();
-      rpslsView.Width = 1000;
-      rpslsView.Height = 1000;
+      ScoreBoardView scoreboardView = controller.GetScoreboardView();
+      scoreboardView.Width = 100;
+      scoreboardView.Height = 100;
+      scoreboardView.Location = new Point(0, 200);
+      this.Width = rpslsView.Width;
+      this.Height = 400;
+
+      // Debugging
+      Console.WriteLine("Form Height = RPSLS Height + Scoreboard Height");
+      Console.WriteLine("Form Height = " + rpslsView.Height + " + " + scoreboardView.Height);
+      Console.WriteLine("RPSLS Location: " + rpslsView.Location);
+      Console.WriteLine("RPSLS Height: " + rpslsView.Height);
+      Console.WriteLine("Scoreboard Location: " + scoreboardView.Location);
+      Console.WriteLine("Scoreboard Height: " + scoreboardView.Height);
       Controls.Add(rpslsView);
+      Controls.Add(scoreboardView);
     }
   }
 }
