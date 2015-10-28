@@ -49,7 +49,10 @@ namespace RPSLS___Project
       {
         NpcChoice();
       }
-      view.ButtonEnableDisable();
+      else
+      {
+        view.ButtonEnableDisable();
+      }
     }
   }
 }
