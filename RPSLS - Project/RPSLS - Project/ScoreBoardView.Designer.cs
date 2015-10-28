@@ -1,4 +1,4 @@
-﻿namespace RPSLS___Project
+namespace RPSLS___Project
 {
   partial class ScoreBoardView
   {
@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+
             this.lblPoints = new System.Windows.Forms.Label();
             this.lblSets = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -63,6 +64,7 @@
             this.Load += new System.EventHandler(this.ScoreBoardView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
 
     }
 
