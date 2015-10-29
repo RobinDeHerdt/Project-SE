@@ -74,5 +74,10 @@ namespace RPSLS___Project
       btnScissors.Enabled = !btnScissors.Enabled;
       btnSpock.Enabled = !btnSpock.Enabled;
     }
+
+    public void UpdateUI(string choice)
+    {
+      lblChoice.Text = choice;
+    }
   }
 }

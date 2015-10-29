@@ -71,8 +71,18 @@ namespace RPSLS___Project
     {
       if (model.PlayerTurn == playerArray.Length - 1)   // Als iedereen aan de beurt is geweest
       {
-        Console.WriteLine("Player" + CalculateWinner() + " wins !");
+        int winningNumber = CalculateWinner();
+        if (winningNumber == 0)
+        {
+          Console.WriteLine("Draw !");
+        }
+        else
+        {
+          Console.WriteLine("Player" + CalculateWinner() + " wins !");
+          gameController.UpdateScoreboard(winningNumber);
+        }
         model.PlayerTurn = 0;
+        StartTurn();
       }
       else
       {
@@ -99,8 +109,11 @@ namespace RPSLS___Project
           {
             tempPoints[i] += CalculateHands(handsOfChoice[i], handsOfChoice[j]);
           }
+          Console.WriteLine("Player" + (i + 1) + " has " + tempPoints[i] + " points");
         }
+       
       }
+      Console.WriteLine(tempPoints[0] + " - " + tempPoints[1] + " - " + tempPoints[2]);
 
       int winningPlayerNumber = 0;
       int highestPoints = 0;
@@ -108,9 +121,15 @@ namespace RPSLS___Project
       {
         if (tempPoints[i - 1] > highestPoints)
         {
-          highestPoints = tempPoints[i - 1];
           winningPlayerNumber = i;
+          highestPoints = tempPoints[i - 1];
         }
+        else if (tempPoints[i - 1] == highestPoints)
+        {
+          winningPlayerNumber = 0;
+          highestPoints = tempPoints[i - 1];
+        }
+        
       }
       return winningPlayerNumber;
     }
