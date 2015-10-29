@@ -19,10 +19,10 @@ namespace RPSLS___Project
       controller = c;
     }
     
-        public void updateView()
+        public void UpdateUI()
         {
-            lblPoints.Text  = "Hier moete de punten komen";
-            lblSets.Text    = "Hier moeten het aantal sets komen";
+            lblPoints.Text  = "Points: " + controller.GetPoints();
+            lblSets.Text    = "Sets: " + controller.GetSetPoints();
         }
 
         private void ScoreBoardView_Load(object sender, EventArgs e)

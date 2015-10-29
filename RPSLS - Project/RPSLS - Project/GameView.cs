@@ -37,7 +37,7 @@ namespace RPSLS___Project
       {
         ScoreBoardView tempScoreboard = scoreboard;
         int xPos = scoreboards.IndexOf(scoreboard) * scoreboardWidth;
-        scoreboard.Location = new Point(xPos, 200);
+        scoreboard.Location = new Point(xPos, 230);
         Controls.Add(tempScoreboard);
       }
 

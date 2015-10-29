@@ -34,6 +34,7 @@
       this.btnLizard = new System.Windows.Forms.Button();
       this.btnSpock = new System.Windows.Forms.Button();
       this.lblNaam = new System.Windows.Forms.Label();
+      this.lblChoice = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // btnRock
@@ -112,10 +113,22 @@
       this.lblNaam.Text = "Naam";
       this.lblNaam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
+      // lblChoice
+      // 
+      this.lblChoice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+      this.lblChoice.Font = new System.Drawing.Font("Broadway", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblChoice.Location = new System.Drawing.Point(30, 193);
+      this.lblChoice.Name = "lblChoice";
+      this.lblChoice.Size = new System.Drawing.Size(75, 26);
+      this.lblChoice.TabIndex = 6;
+      this.lblChoice.Text = "Choice";
+      this.lblChoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
       // HandView
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.lblChoice);
       this.Controls.Add(this.lblNaam);
       this.Controls.Add(this.btnSpock);
       this.Controls.Add(this.btnScissors);
@@ -123,7 +136,7 @@
       this.Controls.Add(this.btnPaper);
       this.Controls.Add(this.btnRock);
       this.Name = "HandView";
-      this.Size = new System.Drawing.Size(140, 203);
+      this.Size = new System.Drawing.Size(140, 230);
       this.ResumeLayout(false);
 
     }
@@ -136,5 +149,6 @@
     private System.Windows.Forms.Button btnLizard;
     private System.Windows.Forms.Button btnSpock;
     private System.Windows.Forms.Label lblNaam;
+    private System.Windows.Forms.Label lblChoice;
   }
 }

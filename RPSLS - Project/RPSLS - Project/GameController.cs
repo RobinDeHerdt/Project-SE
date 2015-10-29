@@ -11,7 +11,8 @@ namespace RPSLS___Project
     private GameView view;
     private RPSLSController rpsls;
     private ScoreBoardController[] scoreboards;
-    private int amountOfPlayers = 3;
+    private int amountOfPlayers = 5;
+    private int pointsRequiredForSet = 3;
 
     public GameController()
     {
@@ -19,7 +20,7 @@ namespace RPSLS___Project
       scoreboards = new ScoreBoardController[amountOfPlayers];
       for (int i = 0; i < amountOfPlayers; i++)
       {
-        scoreboards[i] = new ScoreBoardController(this);
+        scoreboards[i] = new ScoreBoardController(this, pointsRequiredForSet); // 2de parameter = amount of points nodig voor een set te winnen
       }
       view = new GameView(this);
     }
@@ -43,6 +44,19 @@ namespace RPSLS___Project
         viewOfScoreboards.Add(scoreboardView);
       }
       return viewOfScoreboards;
+    }
+
+    public void UpdateScoreboard(int winningPlayerNumber)
+    {
+      scoreboards[winningPlayerNumber - 1].UpdateView();
+    }
+
+    public void ResetPoints()
+    {
+      for (int i = 0; i < scoreboards.Length; i++)
+      {
+        scoreboards[i].ResetPoints();
+      }
     }
   }
 }
