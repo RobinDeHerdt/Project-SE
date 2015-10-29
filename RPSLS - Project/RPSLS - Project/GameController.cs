@@ -10,13 +10,13 @@ namespace RPSLS___Project
   {
     private GameView view;
     private RPSLSController rpsls;
-    //private ScoreBoardController scoreboard;
+    private ScoreBoardController scoreboard;
 
     public GameController()
     {
-      view = new GameView(this);
       rpsls = new RPSLSController(this);
-      //scoreboard = new ScoreBoardController(this);
+      scoreboard = new ScoreBoardController(this);
+      view = new GameView(this);
     }
 
     public GameView GetView()
@@ -29,9 +29,9 @@ namespace RPSLS___Project
       return rpsls.GetView();
     }
 
-    /*public ScoreBoardView GetScoreboardView()
+    public ScoreBoardView GetScoreboardView()
     {
       return scoreboard.GetView();
-    }*/
+    }
   }
 }
