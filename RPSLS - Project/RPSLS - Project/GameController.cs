@@ -10,12 +10,17 @@ namespace RPSLS___Project
   {
     private GameView view;
     private RPSLSController rpsls;
-    private ScoreBoardController scoreboard;
+    private ScoreBoardController[] scoreboards;
+    private int amountOfPlayers = 3;
 
     public GameController()
     {
-      rpsls = new RPSLSController(this);
-      scoreboard = new ScoreBoardController(this);
+      rpsls = new RPSLSController(this, amountOfPlayers);   // 2de parameter = amount of players
+      scoreboards = new ScoreBoardController[amountOfPlayers];
+      for (int i = 0; i < amountOfPlayers; i++)
+      {
+        scoreboards[i] = new ScoreBoardController(this);
+      }
       view = new GameView(this);
     }
 
@@ -29,9 +34,15 @@ namespace RPSLS___Project
       return rpsls.GetView();
     }
 
-    public ScoreBoardView GetScoreboardView()
+    public List<ScoreBoardView> GetScoreboardViews()
     {
-      return scoreboard.GetView();
+      List<ScoreBoardView> viewOfScoreboards = new List<ScoreBoardView>();
+      foreach (ScoreBoardController scoreboard in scoreboards)
+      {
+        ScoreBoardView scoreboardView = scoreboard.GetView();
+        viewOfScoreboards.Add(scoreboardView);
+      }
+      return viewOfScoreboards;
     }
   }
 }

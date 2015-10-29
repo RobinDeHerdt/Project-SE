@@ -14,19 +14,31 @@ namespace RPSLS___Project
     private RPSLSView view;
     private GameController gameController;
 
-    public RPSLSController(GameController c)
+    public RPSLSController(GameController c, int amountOfPlayers)
     {
       int playerCount = 0;
-      playerArray = new HandController[2];
-      player = new HandController(false, this);
-      playerArray[playerCount] = player;
-      playerCount++;
+      playerArray = new HandController[amountOfPlayers];
+      for (int i = 0; i < amountOfPlayers; i++)
+      {
+        if (i > 0)  // Meerdere nps's
+        {
+          playerArray[i] = new HandController(true, this);
+        }
+        else    // Enkel 1 player
+        {
+          playerArray[i] = new HandController(false, this);
+        }
+      }
+      
+      //player = new HandController(false, this);
+      //playerArray[playerCount] = player;
+      //playerCount++;
 
-      npc = new HandController(true, this);
-      playerArray[playerCount] = npc;
-      playerCount++;
+      //npc = new HandController(true, this);
+      //playerArray[playerCount] = npc;
+      //playerCount++;
 
-      model = new RPSLSModel(playerCount);
+      model = new RPSLSModel(amountOfPlayers);
       view = new RPSLSView(this);
 
       gameController = c;
@@ -76,7 +88,7 @@ namespace RPSLS___Project
       for (int i = 0; i < playerArray.Length; i++)      //  Get all handsOfChoice
       {
         handsOfChoice[i] = playerArray[i].GetHand();
-        Console.WriteLine("Player" + i + " chooses: " + playerArray[i].GetHand());
+        Console.WriteLine("Player" + (i + 1) + " chooses: " + playerArray[i].GetHand());
       }
 
       for (int i = 0; i < handsOfChoice.Length; i++)    //  Vergelijkt alle handsOfChoice met de rest
