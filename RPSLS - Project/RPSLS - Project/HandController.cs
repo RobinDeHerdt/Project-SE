@@ -33,12 +33,14 @@ namespace RPSLS___Project
     public void NpcChoice()
     {
       model.ChooseRandom();
+      view.UpdateUI(model.HandOfChoice);
       rpslsController.NextTurn();
     }
 
     public void PlayerChoice(string buttonText)
     {
       model.HandOfChoice = buttonText;
+      view.UpdateUI(model.HandOfChoice);
       rpslsController.NextTurn();
     }
 
